@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "thijmen-f9e31"
+  },
+  "targets": {
+    "thijmen-f9e31": {
+      "hosting": {
+        "artist": [
+          "thijmenpelgrom-artist"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

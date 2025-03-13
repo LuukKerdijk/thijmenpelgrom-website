@@ -1,0 +1,57 @@
+<section class="top-element test">
+  <div
+    id="project-page-title-wrapper"
+    class="section-title margin-sides-2 margin-content test"
+  >
+    <h1>All Projects</h1>
+  </div>
+  <div
+    id="project-collection"
+    class="flex-row flex-wrap margin-sides-2 test"
+  ></div>
+</section>
+
+<style>
+  .project {
+    max-width: 600px;
+  }
+  .project-collection-img-wrapper {
+    aspect-ratio: 1.5 / 1;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .project-collection-img {
+    width: 100%;
+    height: 100%;
+  }
+  .project:hover .project-collection-img-wrapper > img {
+    transform-origin: center;
+    transform: scale(1.1);
+  }
+  .project:hover .project-collection-img-wrapper > svg {
+    transform-origin: center;
+    transform: scale(1.1) translate(-50%, -50%);
+  }
+
+  @media (min-width: 1500px) {
+    .project {
+      width: calc(((100% - 2rem) / 3));
+    }
+  }
+  @media (max-width: 1500px) {
+    .project {
+      width: calc(((100% - 1rem) / 2));
+    }
+  }
+  @media (max-width: 600px) {
+    #project-collection {
+      margin-left: var(--margin-sides);
+      margin-right: var(--margin-sides);
+    }
+    .project {
+      width: 100%;
+    }
+  }
+</style>
+

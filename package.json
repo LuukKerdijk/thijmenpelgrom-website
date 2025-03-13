@@ -1,0 +1,25 @@
+{
+  "name": "thijmen-website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev-backend": "firebase emulators:start --only functions",
+    "dev": "vite",
+    "emulate": "firebase emulators:start --only functions,hosting:artist",
+    "build": "vite build",
+    "deploy-backend": "firebase deploy --only functions",
+    "preview": "firebase hosting:channel:deploy --only artist preview",
+    "preview-stop": "firebase hosting:channel:delete --site thijmenpelgrom-artist preview",
+    "deploy": "firebase deploy --only hosting:artist"
+  },
+  "devDependencies": {
+    "vite": "^5.4.1"
+  },
+  "dependencies": {
+    "@lottiefiles/lottie-player": "^2.0.12",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "firebase": "^11.4.0"
+  }
+}

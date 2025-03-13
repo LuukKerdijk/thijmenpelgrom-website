@@ -1,0 +1,83 @@
+<section class="top-element test">
+  <div class="btn-terug-wrapper flex-row margin-sides-2 margin-content test">
+    <a href="/projects" data-spa-link>
+      <ce-button class="btn-terug-text" type="secondary-text" icon="cross"
+        ><span slot="text">back to overview</span></ce-button
+      >
+      <ce-button class="btn-terug" type="secondary" icon="cross"></ce-button>
+    </a>
+  </div>
+  <div
+    id="project-page-title-wrapper"
+    class="section-title flex-row margin-sides-2 test"
+  >
+    <h1 id="project-title" class="test">project_title</h1>
+    <div class="flex-row test">
+      <p id="project-location" class="bold shrink-0">project_location,</p>
+      <p id="project-date" class="bold">project_date</p>
+    </div>
+  </div>
+  <ce-horizontal-scroll id="horizontal-scroll"
+    ><p slot="test-slot">different</p></ce-horizontal-scroll
+  >
+</section>
+<section id="section-project-desc" class="flex-col margin-sides-3 test">
+  <h1 class="test">About</h1>
+  <p id="project-page-desc" class="margin-content-2 test">
+    no description yet...
+  </p>
+  <div id="project-data" class="test">
+    <p class="grid-uneven">Location:</p>
+    <p id="project-data-location" class="grid-uneven">project_location</p>
+    <p class="grid-even">Date:</p>
+    <p id="project-data-date" class="grid-even">project_date</p>
+    <p class="grid-uneven">Client:</p>
+    <p id="project-data-client" class="grid-uneven">project_client</p>
+  </div>
+</section>
+<div class="btn-terug-wrapper flex-row margin-sides-2 margin-content test">
+  <a href="/projects" data-spa-link>
+    <ce-button class="btn-terug-text" type="secondary-text" icon="cross"
+      ><span slot="text">back to overview</span></ce-button
+    >
+    <ce-button class="btn-terug" type="secondary" icon="cross"></ce-button>
+  </a>
+</div>
+
+<style>
+  /* PROJECT PAGE */
+  .btn-terug-wrapper {
+    flex-wrap: nowrap;
+    justify-content: end;
+  }
+  .btn-terug-wrapper .btn-terug-text {
+    order: 1;
+  }
+
+  #section-project-desc {
+    max-width: 1100px;
+  }
+  #project-data {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  @media (max-width: 1000px) {
+    .btn-terug-wrapper .btn-terug-text {
+      display: none;
+    }
+    .btn-terug-wrapper .btn-terug {
+      display: auto;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .btn-terug-wrapper .btn-terug-text {
+      display: auto;
+    }
+    .btn-terug-wrapper .btn-terug {
+      display: none;
+    }
+  }
+</style>
+

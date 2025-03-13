@@ -1,0 +1,163 @@
+<section id="hero" class="top-element test">
+    <div id="hero-background" class="flex-row flex-gap-none test">
+        <div id="thijmenpelgrom-bg" class="animate-2 test">
+            <div class="overlay-light"></div>
+            <div id="hero-btn-wrapper" class="flex-row flex-childs-align-self">
+                <div id="hero-btn-text" class="test"><p>See my other website!</p></div>
+                <ce-button id="hero-btn" icon="arrow"></ce-button>
+            </div>
+        </div>
+        <div id="dehaaksehoek-bg" class="animate-2 test">
+            <div class="overlay-light"></div>
+        </div>
+    </div>
+    <div id="hero-content-wrapper" class="test">
+        <img id="hero-content-photo" class="absolute-centered margin-content-2" src="./assets/images/personal-photo.png"></img>
+        <div id="hero-content" class="animate-2 test">
+            <h1 class="grid-left test">Thijmen Pelgröm</h1>
+            <h1 class="grid-right test">De Haakse Hoek</h1>
+            <div class="grid-left test">
+                <p class="margin-content test">I’m Thijmen, an ecologically friendly handyman in essence. Working mainly with wood and steel, I do both large and small projects, purely for aesthetics, for fun or for things like environmental activism. I construct houses, build exhibitions, or make my own autonomous creations. Some might describe me as an enthusiastic, slightly workaholic non-stop talking tall man with a big smile and a laugh you can hear from miles away. Which, for better or for worse is quite fitting.</p>
+                <a href="#projects-section">
+                    <ce-button type="primary-text" icon="arrow" rotate="90"><span slot="text">Read more</span></ce-button>
+                </a>
+            </div>
+            <div class="grid-right test">
+                <p class="margin-content test">Comming soon...</p>
+                <a href="#projects-section">
+                    <ce-button type="primary-text" icon="arrow"><span slot="text">Visit website</span></ce-button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="projects-section" class="test">
+    <div class="section-title flex-row margin-sides-2 test">
+        <h1 class="test">Latest Projects</h1>
+        <a class="align-right flex-row flex-gap-small flex-nowrap flex-childs-align-self test" href="/projects" data-spa-link>
+            <p class="test">all projects</p>
+            <ce-icon type="arrow"></ce-icon>
+        </a>
+    </div>
+    <ce-horizontal-scroll class="block test"></ce-horizontal-scroll>
+</section>
+
+<style>
+  /* HERO */
+#hero {
+    height: 80vh;
+    position: relative;
+  }
+#hero-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+#thijmenpelgrom-bg {
+    width: 50%;
+    background-image: url("./static/thijmenpelgrom-bg.JPG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    background-position: center;
+    position: relative;
+  }
+#hero-btn-wrapper {
+    position: absolute;
+    right: calc(-0.5 * var(--btn-size));
+    top: calc(var(--nav-margin) + var(--margin-section-outer) / 2);
+    transform: translate(0, -50%);
+    z-index: 1;
+  }
+#hero-btn {
+    transform-origin: center;
+    transform: scale(-1);
+  }
+#dehaaksehoek-bg {
+    width: 50%;
+    background-image: url("./static/dehaaksehoek-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    background-position: center;
+  }
+
+#hero-content-wrapper {
+    padding: var(--margin-section-outer) 0;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+  }
+#hero-content-photo {
+    width: 300px;
+  }
+#hero-content {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    row-gap: var(--margin-section-inner);
+  }
+  .grid-left {
+    grid-column: 1 / 2;
+  }
+  .grid-right {
+    grid-column: 2 / 3;
+  }
+#hero-content > * {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  /* desktop */
+  @media (min-width: 1300px) {
+    #hero-btn-wrapper {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  /* mobile */
+  @media (max-width: 1300px) {
+    #hero {
+      height: auto;
+    }
+    #thijmenpelgrom-bg {
+      width: calc(100% - var(--btn-size) / 2 - var(--margin-section-inner));
+    }
+    #dehaaksehoek-bg {
+      width: calc(var(--btn-size) / 2 + var(--margin-section-inner));
+      background-image: none;
+    }
+    #hero-content-photo {
+      position: relative;
+      top: 0px;
+      transform: translate(-50%, 0);
+    }
+    #hero-content-wrapper {
+      position: static;
+      transform: translate(0, 0);
+    }
+    #hero-content {
+      grid-template-columns: 100% 0;
+    }
+    .grid-right {
+      height: 0px;
+      opacity: 0;
+    }
+    #hero-content > * {
+      width: 75%;
+    }
+    #hero-btn-wrapper {
+      opacity: 100;
+      pointer-events: auto;
+    }
+  }
+  @media (max-width: 600px) {
+    #hero-content-photo {
+      width: 60%;
+    }
+  }
+</style>

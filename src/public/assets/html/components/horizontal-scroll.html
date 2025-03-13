@@ -1,0 +1,87 @@
+<div id="horizontal-scroll-wrapper" class="test">
+  <div id="horizontal-scroll" class="test"></div>
+  <ce-button id="btn-left" icon="arrow"></ce-button>
+  <ce-button id="btn-right" icon="arrow"></ce-button>
+</div>
+<div id="horizontal-scroll-info" class="test"></div>
+<!-- <div id="full-screen">
+
+</div> -->
+
+<style>
+  @import url("/assets/global.css");
+
+  /* horizontal scroll */
+  #horizontal-scroll-wrapper {
+    position: relative;
+    margin: var(--margin-section-inner) var(--margin-sides)
+      var(--margin-section-inner-2) var(--margin-sides);
+  }
+  #horizontal-scroll {
+    display: flex;
+    align-items: center;
+    margin: 0px calc(50px + var(--margin-sides));
+    overflow-x: scroll;
+    scroll-snap-type: inline mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    pointer-events: none;
+    transition: 0.5s ease-in-out 0.3s;
+  }
+  #horizontal-scroll::-webkit-scrollbar {
+    display: none; /* Chrome */
+  }
+  .scroll-element {
+    width: 100%;
+    flex-shrink: 0;
+    position: relative;
+    scroll-snap-align: center;
+  }
+  .scroll-element > img {
+    /* either img or error */
+    display: block;
+    width: 100%;
+    max-height: calc(100vh - var(--nav-margin));
+    transform: scale(0.9);
+    transition: 0.5s;
+  }
+  #btn-left {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform-origin: center;
+    transform: translateY(-50%) rotate(180deg);
+  }
+  #btn-right {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+  }
+
+  /* scroll info */
+  #horizontal-scroll-info {
+    width: 600px;
+    position: relative;
+    margin: 0px auto;
+  }
+
+  @media (max-width: 1000px) {
+    #horizontal-scroll-info {
+      width: auto;
+      margin: 0px var(--margin-section-inner);
+    }
+  }
+
+  /* fullscreen view */
+  #full-screen {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 11;
+  }
+</style>
